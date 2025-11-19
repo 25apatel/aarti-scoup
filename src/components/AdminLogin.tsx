@@ -11,11 +11,7 @@ import { Label } from "./ui/label";
 import { Button } from "./ui/button";
 import { Alert, AlertDescription } from "./ui/alert";
 import { Separator } from "./ui/separator";
-codex/implement-changes-in-aarti-scoup-repository-xj4692
 import { Eye, EyeOff, Lock, Mail, ArrowLeft } from "lucide-react";
-
-import { Eye, EyeOff, Lock, Mail, University, ArrowLeft } from "lucide-react";
-Aarti
 import { adminUsers, User } from "../mockusers";
 import { AdminDashboard } from "./AdminDashboard";
 
@@ -41,10 +37,7 @@ export function AdminLogin({ onBack }: AdminLoginProps) {
         adminName={loggedInAdmin.name}
         onLogout={() => {
           setLoggedInAdmin(null);
-          codex/implement-changes-in-aarti-scoup-repository-xj4692
           setFormData(initialFormState);
-          setFormData({ email: "", password: "" });
- Aarti
         }}
         onBackToHome={onBack}
       />
@@ -56,9 +49,8 @@ export function AdminLogin({ onBack }: AdminLoginProps) {
     setIsLoading(true);
     setError("");
 
-    // Simulate login process
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       const matchedUser = adminUsers.find(
         (user) =>
           user.email.toLowerCase() === formData.email.toLowerCase() &&
@@ -85,7 +77,6 @@ export function AdminLogin({ onBack }: AdminLoginProps) {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-6">
-        {/* Header */}
         <div className="text-center space-y-2">
           <div className="flex items-center justify-center space-x-2">
             <h1>
@@ -95,7 +86,6 @@ export function AdminLogin({ onBack }: AdminLoginProps) {
           <p className="text-muted-foreground">Administrator Portal Access</p>
         </div>
 
-        {/* Login Card */}
         <Card className="border-border/50 shadow-lg w-full max-w-md mx-auto">
           <CardHeader className="w-full max-w-sm">
             <div className="flex items-center justify-between">
@@ -112,7 +102,7 @@ export function AdminLogin({ onBack }: AdminLoginProps) {
               )}
             </div>
             <CardDescription>
-              {/* Sign in to access your faculty dashboard and collaboration tools */}
+              Use demo credentials to explore the admin dashboard.
             </CardDescription>
           </CardHeader>
 
@@ -130,7 +120,7 @@ export function AdminLogin({ onBack }: AdminLoginProps) {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="your.email@salisbury.edu"
+                    placeholder="emma.taylor@su.edu"
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
                     className="pl-12"
@@ -148,9 +138,7 @@ export function AdminLogin({ onBack }: AdminLoginProps) {
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter your password"
                     value={formData.password}
-                    onChange={(e) =>
-                      handleInputChange("password", e.target.value)
-                    }
+                    onChange={(e) => handleInputChange("password", e.target.value)}
                     className="pl-12"
                     required
                   />
@@ -172,16 +160,6 @@ export function AdminLogin({ onBack }: AdminLoginProps) {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between">
-                <Button
-                  type="button"
-                  variant="link"
-                  className="px-0 text-sm text-muted-foreground hover:text-primary"
-                >
-                  Forgot password?
-                </Button>
-              </div>
-
               <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? "Signing in..." : "Sign In"}
               </Button>
@@ -189,31 +167,12 @@ export function AdminLogin({ onBack }: AdminLoginProps) {
 
             <div className="mt-6">
               <Separator className="my-4" />
-              <div className="text-center space-y-2">
-                {/* <p className="text-sm text-muted-foreground">
-                  Need access to SCOUP?
-                </p> */}
-                {/* <Button variant="outline" className="w-full">
-                  Request Faculty Account
-                </Button> */}
+              <div className="text-center space-y-2 text-sm text-muted-foreground">
+                <p>Demo accounts: emma.taylor@su.edu / adminpass</p>
               </div>
             </div>
           </CardContent>
         </Card>
-
-        {/* Footer */}
-        <div className="text-center text-sm text-muted-foreground">
-          <p>
-            By signing in, you agree to our{" "}
-            <Button variant="link" className="px-0 text-sm">
-              Terms of Service
-            </Button>{" "}
-            and{" "}
-            <Button variant="link" className="px-0 text-sm">
-              Privacy Policy
-            </Button>
-          </p>
-        </div>
       </div>
     </div>
   );
