@@ -27,30 +27,13 @@ interface AdminDashboardProps {
 }
 
 const navigationLinks = [
-codex/implement-changes-in-aarti-scoup-repository-xj4692
   { label: "Dashboard", icon: LayoutDashboard, href: "#dashboard" },
   { label: "Approvals", icon: CheckCircle2, href: "#approvals" },
   { label: "Faculty", icon: Users2, href: "#faculty" },
-  {
-    label: "Specializations",
-    icon: GraduationCap,
-    href: "#specializations",
-  },
-  {
-    label: "Publications & Projects",
-    icon: BookOpen,
-    href: "#publications",
-  },
+  { label: "Specializations", icon: GraduationCap, href: "#specializations" },
+  { label: "Publications & Projects", icon: BookOpen, href: "#publications" },
   { label: "Users & Roles", icon: UserCog, href: "#users" },
   { label: "Settings", icon: Settings, href: "#settings" },
-  { label: "Dashboard", icon: LayoutDashboard },
-  { label: "Approvals", icon: CheckCircle2 },
-  { label: "Faculty", icon: Users2 },
-  { label: "Specializations", icon: GraduationCap },
-  { label: "Publications and Projects", icon: BookOpen },
-  { label: "Users and roles", icon: UserCog },
-  { label: "Settings", icon: Settings },
-        Aarti
 ];
 
 const statHighlights = [
@@ -71,11 +54,7 @@ const pendingApprovals = [
   "Collaboration request: Robotics Lab",
 ];
 
-export function AdminDashboard({
-  adminName,
-  onLogout,
-  onBackToHome,
-}: AdminDashboardProps) {
+export function AdminDashboard({ adminName, onLogout, onBackToHome }: AdminDashboardProps) {
   return (
     <div className="min-h-screen bg-slate-100">
       <div className="flex min-h-screen">
@@ -86,25 +65,14 @@ export function AdminDashboard({
               {adminName ? `Welcome, ${adminName}` : "Administrator"}
             </p>
           </div>
-codex/implement-changes-in-aarti-scoup-repository-xj4692
-          <nav
-            className="flex-1 px-4 py-6 space-y-2 text-sm"
-            aria-label="Admin dashboard sections"
-          >
+
+          <nav className="flex-1 px-4 py-6 space-y-2 text-sm" aria-label="Admin dashboard sections">
             {navigationLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 className="flex items-center justify-between rounded-md px-3 py-2 transition hover:bg-purple-500/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400"
-                >
-          <nav className="flex-1 px-4 py-6 space-y-2 text-sm">
-            {navigationLinks.map((link) => (
-              <a
-                key={link.label}
-                href="#"
-                className="flex items-center justify-between rounded-md px-3 py-2 transition hover:bg-purple-500/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400"
               >
- Aarti
                 <span className="flex items-center gap-3">
                   <link.icon className="h-4 w-4 text-purple-300" />
                   {link.label}
@@ -113,6 +81,7 @@ codex/implement-changes-in-aarti-scoup-repository-xj4692
               </a>
             ))}
           </nav>
+
           <Separator className="bg-purple-500/40" />
           <div className="p-4">
             {onLogout && (
@@ -128,17 +97,12 @@ codex/implement-changes-in-aarti-scoup-repository-xj4692
         </aside>
 
         <main className="flex-1 p-8 space-y-6">
- codex/implement-changes-in-aarti-scoup-repository-xj4692
           <div
             id="dashboard"
             className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
           >
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
- Aarti
             <div>
-              <h1 className="text-3xl font-semibold text-gray-900">
-                Admin Dashboard
-              </h1>
+              <h1 className="text-3xl font-semibold text-gray-900">Admin Dashboard</h1>
               <p className="text-gray-500">
                 Overview of your faculty network and publication activity.
               </p>
@@ -171,15 +135,8 @@ codex/implement-changes-in-aarti-scoup-repository-xj4692
             ))}
           </section>
 
- codex/implement-changes-in-aarti-scoup-repository-xj4692
-          <section
-            id="approvals"
-            className="grid gap-6 lg:grid-cols-2"
-          >
+          <section id="approvals" className="grid gap-6 lg:grid-cols-2">
             <Card className="border-purple-200 shadow-sm" id="activity">
-          <section className="grid gap-6 lg:grid-cols-2">
-            <Card className="border-purple-200 shadow-sm">
-Aarti
               <CardHeader>
                 <CardTitle>Recent Activity</CardTitle>
                 <CardDescription>
@@ -221,12 +178,8 @@ Aarti
               </CardContent>
             </Card>
           </section>
-codex/implement-changes-in-aarti-scoup-repository-xj4692
 
-          <section
-            id="faculty"
-            className="grid gap-6 lg:grid-cols-2"
-          >
+          <section id="faculty" className="grid gap-6 lg:grid-cols-2">
             <Card className="border-purple-200 shadow-sm">
               <CardHeader>
                 <CardTitle>Faculty Directory</CardTitle>
@@ -286,10 +239,7 @@ codex/implement-changes-in-aarti-scoup-repository-xj4692
             </Card>
           </section>
 
-          <section
-            id="publications"
-            className="grid gap-6 lg:grid-cols-2"
-          >
+          <section id="publications" className="grid gap-6 lg:grid-cols-2">
             <Card className="border-purple-200 shadow-sm">
               <CardHeader>
                 <CardTitle>Publications</CardTitle>
@@ -379,7 +329,6 @@ codex/implement-changes-in-aarti-scoup-repository-xj4692
               </CardContent>
             </Card>
           </section>
-Aarti
         </main>
       </div>
     </div>
